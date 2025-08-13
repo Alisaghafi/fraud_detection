@@ -57,7 +57,7 @@ y_pred = pipeline.predict(X_test)
 print(classification_report(y_test, y_pred))
 plot_cm(y_test, y_pred, "Pipeline with SMOTE + Logistic Regression")
 
-import joblib
+# model saved
 
 joblib.dump(pipeline, "models/fraud_detection_pipeline.pkl")
 print("Saved pipeline to models/fraud_detection_pipeline.pkl")
