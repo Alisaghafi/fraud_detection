@@ -9,6 +9,7 @@ from imblearn.over_sampling import SMOTE
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
+import joblib
 
 
 
@@ -55,3 +56,8 @@ pipeline.fit(X_train, y_train)
 y_pred = pipeline.predict(X_test)
 print(classification_report(y_test, y_pred))
 plot_cm(y_test, y_pred, "Pipeline with SMOTE + Logistic Regression")
+
+import joblib
+
+joblib.dump(pipeline, "models/fraud_detection_pipeline.pkl")
+print("Saved pipeline to models/fraud_detection_pipeline.pkl")
